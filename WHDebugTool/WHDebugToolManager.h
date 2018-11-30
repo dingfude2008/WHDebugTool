@@ -20,14 +20,12 @@ typedef NS_OPTIONS(NSUInteger, DebugToolType) {
 
 + (instancetype)sharedInstance;
 
-/**
- switch on/off
- DebugToolTypeFPS | DebugToolTypeCPU | DebugToolTypeMemory
- */
 - (void)toggleWith:(DebugToolType)type;
 
 - (void)showWith:(DebugToolType)type;
 
 - (void)hide;
+
+- (void)setLongConnect:(BOOL)connected;
 
 @end
