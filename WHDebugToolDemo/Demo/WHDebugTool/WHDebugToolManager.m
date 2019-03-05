@@ -95,6 +95,10 @@ static id _instance;
     [self.memoryLabel updateLabelWith:DebugToolLabelTypeLongConnect value:connected ? 1 : 0];
 }
 
+- (void)setLongConnectStr:(NSString *)connectedString{
+    [self.memoryLabel updateLabelWith:DebugToolLabelTypeLongConnect value:[connectedString intValue]];
+}
+
 - (void)showFPS {
     [[WHDebugFPSMonitor sharedInstance] startMonitoring];
     [WHDebugFPSMonitor sharedInstance].valueBlock = ^(float value) {
