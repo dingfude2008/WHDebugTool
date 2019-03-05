@@ -18,8 +18,6 @@ typedef NS_OPTIONS(NSUInteger, DebugToolType) {
 
 @interface WHDebugToolManager : NSObject
 
-@property (nonatomic, assign) NSInteger age;
-
 + (instancetype)sharedInstance;
 
 - (void)toggleWith:(DebugToolType)type;
