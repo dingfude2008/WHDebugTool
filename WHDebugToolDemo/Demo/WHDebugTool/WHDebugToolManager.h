@@ -27,7 +27,7 @@ typedef NS_OPTIONS(NSUInteger, DebugToolType) {
 - (void)hide;
 
 - (void)setLongConnect:(BOOL)connected;
-
+ 
 - (void)setLongConnectStr:(NSString *)connectedString;
 
 @end
