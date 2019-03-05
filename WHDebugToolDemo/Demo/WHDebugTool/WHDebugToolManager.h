@@ -18,6 +18,8 @@ typedef NS_OPTIONS(NSUInteger, DebugToolType) {
 
 @interface WHDebugToolManager : NSObject
 
+@property (nonatomic, assign) NSInteger age;
+
 + (instancetype)sharedInstance;
 
 - (void)toggleWith:(DebugToolType)type;
@@ -27,7 +29,7 @@ typedef NS_OPTIONS(NSUInteger, DebugToolType) {
 - (void)hide;
 
 - (void)setLongConnect:(BOOL)connected;
- 
+
 - (void)setLongConnectStr:(NSString *)connectedString;
 
 @end
