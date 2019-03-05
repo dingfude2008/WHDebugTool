@@ -42,6 +42,13 @@
 }
 
 - (void)updateLabelWith:(DebugToolLabelType)labelType value:(float)value {
+//case zh = 0
+//case eu = 1
+//case us = 2
+//case au = 3
+//case test   = 4
+    // + 1
+    NSString *connect = @"";
     switch (labelType) {
         case DebugToolLabelTypeFPS:
             self.fps = value;
@@ -53,14 +60,40 @@
             self.cpu = value;
             break;
         case DebugToolLabelTypeLongConnect:
+            connect = [self getText:value];
             self.longConnect = (int)value;
             break;
         default:
             break;
     }
-    NSString *text = [NSString stringWithFormat:@"FPS:%d Memory:%.1fM CPU:%d%% Connect:%d", (int)round(self.fps), self.memory, (int)round(self.cpu), self.longConnect];
+    
+    if (connect.length == 0){
+        connect = [self getText:self.longConnect];
+    }
+    
+    NSString *text = [NSString stringWithFormat:@"FPS:%d Memory:%.1fM CPU:%d%% Connect:%@", (int)round(self.fps), self.memory, (int)round(self.cpu), connect];
+    
     self.text = text;
     
 }
+
+- (NSString *)getText:(int)value{
+    NSString *connect = @"";
+    if (value == 0) {
+        connect = @"0";
+    } else if (value == 1) {
+        connect = @"zh";
+    } else if (value == 2) {
+        connect = @"eu";
+    } else if (value == 3) {
+        connect = @"us";
+    } else if (value == 4) {
+        connect = @"au";
+    } else if (value == 5) {
+        connect = @"test";
+    }
+    return connect;
+}
+
 
 @end

@@ -28,4 +28,6 @@ typedef NS_OPTIONS(NSUInteger, DebugToolType) {
 
 - (void)setLongConnect:(BOOL)connected;
 
+- (void)setLongConnectStr:(NSString *)connectedString;
+
 @end
