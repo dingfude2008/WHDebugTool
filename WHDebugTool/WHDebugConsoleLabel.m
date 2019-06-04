@@ -91,6 +91,8 @@
         connect = @"au";
     } else if (value == 5) {
         connect = @"test";
+    } else if (value == 6) {
+        connect = @"aws";
     }
     return connect;
 }
